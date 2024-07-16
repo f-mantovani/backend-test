@@ -17,16 +17,15 @@ app.use(compression());
 type QueryString = {
   pathway: "CT" | "NC" | "GS";
   adjustment: "Yes" | "No";
-  year?: number;
-  identifier: Identifiers;
-  region?: string;
+  identifier: 'food_security' | 'land';
 };
 
 const pathways = ["CT", "NC", "GS"];
 const adjustments = ["Yes", "No"];
 
-app.get("/", async (req, res) => {
-  const { pathway, adjustment, year, identifier, region } = req.query;
+app.get("/:year", async (req, res) => {
+  const { pathway, adjustment, identifier } = req.query;
+  const { year } = req.params
 
   if (
     typeof pathway !== "string" ||
@@ -39,7 +38,7 @@ app.get("/", async (req, res) => {
     return;
   }
 
-  const filter = { pathway, adjustment, year, identifier, region } as QueryString;
+  const filter = { year, pathway, adjustment, identifier } as QueryString;
   const data = await writeToFile(filter);
   res.json(data);
 });

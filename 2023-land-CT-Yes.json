@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Total area land inside protected areas or other effective conservation measures",
+    "description": "Share of protected area in land",
+    "axisY": "Mha Protected Areas and OECM",
+    "axisX": "year",
+    "graphType": "bar",
+    "legend": [
+      {
+        "id": 1,
+        "label": "Forests in PA areas",
+        "color": "red"
+      },
+      {
+        "id": 2,
+        "label": "Other natural lands in PA areas",
+        "color": "blue"
+      },
+      {
+        "id": 3,
+        "label": "Other lands (cropland, pastures) in PA areas",
+        "color": "darkgreen"
+      },
+      {
+        "id": 4,
+        "label": "Other Effective Conservations Measures (all land cover classes)",
+        "color": "lightgreen"
+      }
+    ],
+    "data": [],
+    "keys": [
+      "protectedareasforest",
+      "protectedareasothernat",
+      "protectedareasother",
+      "oecmareas"
+    ]
+  }
+]
